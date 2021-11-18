@@ -5,7 +5,16 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :price, :image, :pokemon_name, :pokemon_type, :pokemon_number
+  permit_params :name, :description, :price, :image, :pokemon_name, :pokemon_type, :pokemon_number, :image
+
+  form do |f|
+    f.semantic_errors
+    f.inputs
+    f.inputs do
+      f.input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image) : ""
+    end
+    f.actions
+  end
   #
   # or
   #

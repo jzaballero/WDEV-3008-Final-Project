@@ -1,0 +1,30 @@
+<div class="column is-one-fifth ml-6">
+  <aside class="menu">
+    <p class="menu-label">
+      Navigation
+    </p>
+    <ul class="menu-list">
+      <li><%= link_to "Products", products_path%></li>
+      <%#TODO: link_to "Categories", categories_path%>
+    </ul>
+
+    <p class="menu-label">
+      General
+    </p>
+    <ul class="menu-list">
+      <% link_pages.each do | page | %>
+        <li><%= link_to page.title, permalink_path(page.permalink) %> </li>
+      <% end %>
+    </ul>
+
+    <p class="menu-label">
+      Search Products
+    </p>
+    <ul class="menu-list">
+      <li>
+        **Add search**
+        <%# TODO %>
+      </li>
+    </ul>
+  </aside>
+</div>

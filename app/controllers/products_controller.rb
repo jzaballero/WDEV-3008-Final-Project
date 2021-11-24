@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.where(params[:id])
+    @product = Product.find(params[:id])
   end
+
+  # TODO: search
 end

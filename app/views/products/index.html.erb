@@ -1,0 +1,7 @@
+<h2 class="title"><%= link_to "Products", products_path%></h2>
+
+<ul>
+ <%= render @products %>
+</ul>
+
+<%= will_paginate @products %>

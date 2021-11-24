@@ -4941,3 +4941,526 @@ Migrating to CreatePages (20211124182724)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2021-11-24 12:37:52 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 45.0ms | Allocations: 337)
+Completed 200 OK in 176ms (Views: 83.8ms | ActiveRecord: 0.0ms | Allocations: 2996)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-24 12:37:57 -0600
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 309)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2021-11-24 12:37:57 -0600
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 36.5ms | Allocations: 593)
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 281.5ms | Allocations: 9005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 408.9ms | Allocations: 11408)
+Completed 200 OK in 452ms (Views: 416.3ms | ActiveRecord: 2.7ms | Allocations: 17050)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2021-11-24 12:38:14 -0600
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 348ms (ActiveRecord: 0.4ms | Allocations: 7892)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-24 12:38:14 -0600
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 43.3ms | Allocations: 7658)
+Completed 200 OK in 81ms (Views: 47.1ms | ActiveRecord: 0.7ms | Allocations: 10210)
+
+
+Started GET "/admin/pages" for 127.0.0.1 at 2021-11-24 12:38:17 -0600
+Processing by Admin::PagesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 152.9ms | Allocations: 17712)
+Completed 200 OK in 203ms (Views: 157.5ms | ActiveRecord: 2.7ms | Allocations: 21365)
+
+
+Started GET "/admin/pages/new" for 127.0.0.1 at 2021-11-24 12:38:21 -0600
+Processing by Admin::PagesController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 55.4ms | Allocations: 14963)
+Completed 200 OK in 64ms (Views: 57.6ms | ActiveRecord: 0.3ms | Allocations: 19725)
+
+
+Started POST "/admin/pages" for 127.0.0.1 at 2021-11-24 12:41:55 -0600
+Processing by Admin::PagesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"About", "content"=>"Catering to Pokémon card lovers around the world, One Stop Poké-Shop is here to fulfill your needs. \r\n\r\nStarting as a young man and Kijiji, Maximus Maximillian has been buying and selling used Pokémon cards on the internet, the business has grown more than anyone could have imagined; so much to the point where he now has the support of his moms, and 4 of his friends to help him keep up with the demand.", "permalink"=>"about"}, "commit"=>"Create Page"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  [1m[36mPage Create (2.0ms)[0m  [1m[32mINSERT INTO "pages" ("title", "content", "permalink", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "About"], ["content", "Catering to Pokémon card lovers around the world, One Stop Poké-Shop is here to fulfill your needs. \r\n\r\nStarting as a young man and Kijiji, Maximus Maximillian has been buying and selling used Pokémon cards on the internet, the business has grown more than anyone could have imagined; so much to the point where he now has the support of his moms, and 4 of his friends to help him keep up with the demand."], ["permalink", "about"], ["created_at", "2021-11-24 18:41:55.648055"], ["updated_at", "2021-11-24 18:41:55.648055"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/pages/1
+Completed 302 Found in 43ms (ActiveRecord: 8.4ms | Allocations: 11299)
+
+
+Started GET "/admin/pages/1" for 127.0.0.1 at 2021-11-24 12:41:55 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (1.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 1], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 161.0ms | Allocations: 26379)
+Completed 200 OK in 179ms (Views: 161.2ms | ActiveRecord: 5.5ms | Allocations: 29696)
+
+
+Started GET "/admin/pages" for 127.0.0.1 at 2021-11-24 12:42:00 -0600
+Processing by Admin::PagesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 101.2ms | Allocations: 28268)
+Completed 200 OK in 105ms (Views: 99.2ms | ActiveRecord: 2.8ms | Allocations: 30460)
+
+
+Started GET "/admin/pages/new" for 127.0.0.1 at 2021-11-24 12:42:03 -0600
+Processing by Admin::PagesController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 23.5ms | Allocations: 12729)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.4ms | Allocations: 14373)
+
+
+Started POST "/admin/pages" for 127.0.0.1 at 2021-11-24 12:49:51 -0600
+Processing by Admin::PagesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"Contact Us", "content"=>"Phone 📞 \r\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n\r\n\r\nE-Mail 📧\r\n\r\nsupport@PokeShop.ca\r\n\r\n\r\nAddress 🏠 \r\n\r\n120 Ash St.\r\nPallet Town, MB H0H 0H0\r\nCanada\r\n", "permalink"=>"contact"}, "commit"=>"Create Page"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  [1m[36mPage Create (1.8ms)[0m  [1m[32mINSERT INTO "pages" ("title", "content", "permalink", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Contact Us"], ["content", "Phone 📞 \r\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n\r\n\r\nE-Mail 📧\r\n\r\nsupport@PokeShop.ca\r\n\r\n\r\nAddress 🏠 \r\n\r\n120 Ash St.\r\nPallet Town, MB H0H 0H0\r\nCanada\r\n"], ["permalink", "contact"], ["created_at", "2021-11-24 18:49:51.862705"], ["updated_at", "2021-11-24 18:49:51.862705"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/pages/2
+Completed 302 Found in 40ms (ActiveRecord: 7.5ms | Allocations: 8907)
+
+
+Started GET "/admin/pages/2" for 127.0.0.1 at 2021-11-24 12:49:51 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 75.3ms | Allocations: 17426)
+Completed 200 OK in 84ms (Views: 73.6ms | ActiveRecord: 3.4ms | Allocations: 19838)
+
+
+Started GET "/admin/pages" for 127.0.0.1 at 2021-11-24 12:49:56 -0600
+Processing by Admin::PagesController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 69.2ms | Allocations: 29531)
+Completed 200 OK in 79ms (Views: 68.2ms | ActiveRecord: 2.4ms | Allocations: 31304)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-11-24 12:50:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/" for 127.0.0.1 at 2021-11-24 12:51:25 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.1ms | Allocations: 219)
+Completed 200 OK in 17ms (Views: 15.3ms | Allocations: 1017)
+
+
+Started GET "/about" for 127.0.0.1 at 2021-11-24 12:51:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/Products" for 127.0.0.1 at 2021-11-24 12:51:39 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/Products"):
+  
+Started GET "/Products" for 127.0.0.1 at 2021-11-24 12:51:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/Products"):
+  
+Started GET "/pages/about" for 127.0.0.1 at 2021-11-24 12:52:10 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+Completed 406 Not Acceptable in 107ms (ActiveRecord: 9.5ms | Allocations: 7594)
+
+
+  
+ActionController::MissingExactTemplate (PagesController#permalink is missing a template for request formats: text/html):
+  
+actionpack (6.1.4.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/pages/about" for 127.0.0.1 at 2021-11-24 12:54:03 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 0.5ms | Allocations: 3670)
+
+
+  
+ActionController::MissingExactTemplate (PagesController#permalink is missing a template for request formats: text/html):
+  
+actionpack (6.1.4.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/pages/about" for 127.0.0.1 at 2021-11-24 12:54:08 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.4ms | Allocations: 1240)
+
+
+  
+ActionController::MissingExactTemplate (PagesController#permalink is missing a template for request formats: text/html):
+  
+actionpack (6.1.4.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.4.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/pages/about" for 127.0.0.1 at 2021-11-24 12:55:21 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 12.9ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 612.9ms | Allocations: 15536)
+Completed 200 OK in 621ms (Views: 615.5ms | ActiveRecord: 0.5ms | Allocations: 17471)
+
+
+Started GET "/pages/contact" for 127.0.0.1 at 2021-11-24 12:55:28 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.2ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 3075)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.3ms | Allocations: 4012)
+
+
+Started GET "/pages/contact" for 127.0.0.1 at 2021-11-24 12:58:08 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 6.4ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3372)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 0.5ms | Allocations: 5301)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-24 12:59:58 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 219)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 874)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-24 13:00:02 -0600
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 20.7ms | Allocations: 7492)
+Completed 200 OK in 61ms (Views: 24.8ms | ActiveRecord: 3.8ms | Allocations: 16278)
+
+
+Started GET "/admin/pages" for 127.0.0.1 at 2021-11-24 13:00:08 -0600
+Processing by Admin::PagesController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 49.5ms | Allocations: 31760)
+Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 1.4ms | Allocations: 34606)
+
+

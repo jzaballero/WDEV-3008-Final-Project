@@ -1,5 +1,15 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
 <h3 class="subtitle"><%= link_to @product.name, @product %></h3>
+<%# TODO: link_to @product.category.name, @product %>
+<h5 class="subtitle is-5">$<%= '%.2f' % @product.price %><h5>
+<h5 class="subtitle is-5">Description<h5>
+<p><%= @product.description %></p>
+
+<br><br>
+<h5 class="subtitle is-5">Pokémon Details<h5>
+<p>Name: <%= @product.pokemon_name %> #<%= @product.pokemon_number %></p>
+<p>Type: <%= @product.pokemon_type %></p>
+
 
 <%# TODO: Add more information %>

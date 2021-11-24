@@ -5464,3 +5464,419 @@ Processing by Admin::PagesController#index as HTML
 Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 1.4ms | Allocations: 34606)
 
 
+Started GET "/" for 127.0.0.1 at 2021-11-24 13:55:51 -0600
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 23.3ms | Allocations: 337)
+Completed 200 OK in 69ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 2558)
+
+
+Started GET "/pages/about_us" for 127.0.0.1 at 2021-11-24 13:55:58 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about_us"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about_us"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1868)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1934)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms | Allocations: 4736)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <h2><%= @page.title %></h2>
+    2: 
+    3: <p><%= sanitize @page.content %></p>
+  
+app/views/pages/permalink.html.erb:1
+Started GET "/pages/about" for 127.0.0.1 at 2021-11-24 13:56:00 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 28.3ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 131.3ms | Allocations: 5289)
+Completed 200 OK in 139ms (Views: 131.8ms | ActiveRecord: 1.0ms | Allocations: 8963)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-24 13:56:10 -0600
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 360)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2021-11-24 13:56:10 -0600
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 1.1ms | Allocations: 598)
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 27.6ms | Allocations: 8996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 38.9ms | Allocations: 11354)
+Completed 200 OK in 56ms (Views: 44.4ms | ActiveRecord: 1.4ms | Allocations: 16716)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2021-11-24 13:56:16 -0600
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/admin
+Completed 302 Found in 225ms (ActiveRecord: 0.8ms | Allocations: 7361)
+
+
+Started GET "/admin" for 127.0.0.1 at 2021-11-24 13:56:16 -0600
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 17.9ms | Allocations: 7669)
+Completed 200 OK in 33ms (Views: 21.2ms | ActiveRecord: 0.8ms | Allocations: 10224)
+
+
+Started GET "/admin/pages" for 127.0.0.1 at 2021-11-24 13:56:23 -0600
+Processing by Admin::PagesController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "pages" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 61.2ms | Allocations: 33127)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 1.2ms | Allocations: 36254)
+
+
+Started GET "/admin/pages/2/edit" for 127.0.0.1 at 2021-11-24 13:56:27 -0600
+Processing by Admin::PagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Page Load (0.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 33.4ms | Allocations: 15640)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.6ms | Allocations: 18944)
+
+
+Started PATCH "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:56:52 -0600
+Processing by Admin::PagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"Contact Us", "content"=>"Phone 📞 \r\n</br>\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\r\n", "permalink"=>"contact"}, "commit"=>"Update Page", "id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? AND "pages"."id" != ? LIMIT ?[0m  [["permalink", "contact"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mPage Update (1.1ms)[0m  [1m[33mUPDATE "pages" SET "content" = ?, "updated_at" = ? WHERE "pages"."id" = ?[0m  [["content", "Phone 📞 \r\n</br>\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\r\n"], ["updated_at", "2021-11-24 19:56:52.523198"], ["id", 2]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/pages/2
+Completed 302 Found in 62ms (ActiveRecord: 7.0ms | Allocations: 12671)
+
+
+Started GET "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:56:52 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 63.5ms | Allocations: 25910)
+Completed 200 OK in 74ms (Views: 63.7ms | ActiveRecord: 3.3ms | Allocations: 29101)
+
+
+Started GET "/" for ::1 at 2021-11-24 13:56:58 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.4ms | Allocations: 219)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 822)
+
+
+Started GET "/pages/about" for ::1 at 2021-11-24 13:57:06 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.6ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3184)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 4064)
+
+
+Started GET "/pages/about" for ::1 at 2021-11-24 13:57:08 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (1.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 2.2ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3161)
+Completed 200 OK in 27ms (Views: 20.3ms | ActiveRecord: 1.2ms | Allocations: 4093)
+
+
+Started GET "/pages/about" for ::1 at 2021-11-24 13:57:09 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.4ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3159)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.4ms | Allocations: 4091)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:57:22 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (1.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 5.4ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 3187)
+Completed 200 OK in 60ms (Views: 51.2ms | ActiveRecord: 1.4ms | Allocations: 4119)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:57:52 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (1.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 2.9ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3186)
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 1.1ms | Allocations: 4118)
+
+
+Started GET "/admin/pages/2/edit" for 127.0.0.1 at 2021-11-24 13:58:48 -0600
+Processing by Admin::PagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Page Load (0.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 21.7ms | Allocations: 14220)
+Completed 200 OK in 29ms (Views: 22.4ms | ActiveRecord: 0.7ms | Allocations: 16610)
+
+
+Started PATCH "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:58:57 -0600
+Processing by Admin::PagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"Contact Us", "content"=>"Phone 📞 \r\n\\n\\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\r\n", "permalink"=>"contact"}, "commit"=>"Update Page", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? AND "pages"."id" != ? LIMIT ?[0m  [["permalink", "contact"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mPage Update (2.6ms)[0m  [1m[33mUPDATE "pages" SET "content" = ?, "updated_at" = ? WHERE "pages"."id" = ?[0m  [["content", "Phone 📞 \r\n\\n\\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\r\n"], ["updated_at", "2021-11-24 19:58:58.000616"], ["id", 2]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/pages/2
+Completed 302 Found in 46ms (ActiveRecord: 9.2ms | Allocations: 8185)
+
+
+Started GET "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:58:58 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (1.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 37.5ms | Allocations: 17417)
+Completed 200 OK in 49ms (Views: 38.0ms | ActiveRecord: 2.6ms | Allocations: 19813)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:58:59 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.6ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3184)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms | Allocations: 4115)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:59:00 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.5ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 3186)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms | Allocations: 4118)
+
+
+Started GET "/admin/pages/2/edit" for 127.0.0.1 at 2021-11-24 13:59:12 -0600
+Processing by Admin::PagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Page Load (0.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 28.3ms | Allocations: 14188)
+Completed 200 OK in 41ms (Views: 31.0ms | ActiveRecord: 0.8ms | Allocations: 16574)
+
+
+Started PATCH "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:59:17 -0600
+Processing by Admin::PagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"Contact Us", "content"=>"\"Phone 📞 \r\n\\n\\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\"\r\n", "permalink"=>"contact"}, "commit"=>"Update Page", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? AND "pages"."id" != ? LIMIT ?[0m  [["permalink", "contact"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mPage Update (1.2ms)[0m  [1m[33mUPDATE "pages" SET "content" = ?, "updated_at" = ? WHERE "pages"."id" = ?[0m  [["content", "\"Phone 📞 \r\n\\n\\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n</br>\r\n</br>\r\nE-Mail 📧\r\n</br>\r\nsupport@PokeShop.ca\r\n</br>\r\n</br>\r\nAddress 🏠 \r\n</br>\r\n120 Ash St.</br>\r\nPallet Town, MB H0H 0H0</br>\r\nCanada\"\r\n"], ["updated_at", "2021-11-24 19:59:17.950314"], ["id", 2]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/pages/2
+Completed 302 Found in 32ms (ActiveRecord: 8.6ms | Allocations: 8244)
+
+
+Started GET "/admin/pages/2" for 127.0.0.1 at 2021-11-24 13:59:17 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 33.9ms | Allocations: 17402)
+Completed 200 OK in 46ms (Views: 33.8ms | ActiveRecord: 2.3ms | Allocations: 19798)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:59:19 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.9ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 3180)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 4111)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:59:20 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 0.5ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3180)
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 0.5ms | Allocations: 4112)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:59:20 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 2.3ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 3184)
+Completed 200 OK in 32ms (Views: 25.7ms | ActiveRecord: 0.5ms | Allocations: 4118)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 13:59:21 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 1.1ms | Allocations: 143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 3316)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 0.5ms | Allocations: 4248)
+
+
+Started GET "/admin/pages/2/edit" for 127.0.0.1 at 2021-11-24 14:00:52 -0600
+Processing by Admin::PagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Page Load (0.0ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 26.0ms | Allocations: 14189)
+Completed 200 OK in 37ms (Views: 26.7ms | ActiveRecord: 1.3ms | Allocations: 16577)
+
+
+Started PATCH "/admin/pages/2" for 127.0.0.1 at 2021-11-24 14:01:17 -0600
+Processing by Admin::PagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "page"=>{"title"=>"Contact Us", "content"=>"Phone 📞 \r\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n\r\n\r\nE-Mail 📧\r\n\r\nsupport@PokeShop.ca\r\n\r\n\r\nAddress 🏠 \r\n\r\n120 Ash St.\r\nPallet Town, MB H0H 0H0\r\nCanada\"\r\n", "permalink"=>"contact"}, "commit"=>"Update Page", "id"=>"2"}
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPage Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pages" WHERE "pages"."permalink" = ? AND "pages"."id" != ? LIMIT ?[0m  [["permalink", "contact"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mPage Update (1.2ms)[0m  [1m[33mUPDATE "pages" SET "content" = ?, "updated_at" = ? WHERE "pages"."id" = ?[0m  [["content", "Phone 📞 \r\n\r\n1-800-ONE-STOP (1-800-663-7867)\r\n\r\n\r\nE-Mail 📧\r\n\r\nsupport@PokeShop.ca\r\n\r\n\r\nAddress 🏠 \r\n\r\n120 Ash St.\r\nPallet Town, MB H0H 0H0\r\nCanada\"\r\n"], ["updated_at", "2021-11-24 20:01:17.762982"], ["id", 2]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/pages/2
+Completed 302 Found in 39ms (ActiveRecord: 6.4ms | Allocations: 8245)
+
+
+Started GET "/admin/pages/2" for 127.0.0.1 at 2021-11-24 14:01:17 -0600
+Processing by Admin::PagesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Page"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/jzaballero/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 39.5ms | Allocations: 17410)
+Completed 200 OK in 49ms (Views: 38.7ms | ActiveRecord: 2.7ms | Allocations: 19807)
+
+
+Started GET "/pages/contact" for ::1 at 2021-11-24 14:01:44 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"contact"}
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "contact"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 13.4ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 3506)
+Completed 200 OK in 48ms (Views: 41.3ms | ActiveRecord: 0.7ms | Allocations: 5435)
+
+
+Started GET "/pages/about" for ::1 at 2021-11-24 14:01:49 -0600
+Processing by PagesController#permalink as HTML
+  Parameters: {"permalink"=>"about"}
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" WHERE "pages"."permalink" = ? LIMIT ?[0m  [["permalink", "about"], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:7:in `permalink'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/permalink.html.erb within layouts/application
+  Rendered pages/permalink.html.erb within layouts/application (Duration: 1.1ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3182)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.4ms | Allocations: 4117)
+
+

@@ -1,0 +1,14 @@
+<h2 class="title"><%= link_to "Products", products_path%></h2>
+
+<h3 class="subtitle is-5 mt-5 mb-2">
+  Found <%= pluralize(@products.count, 'Product')%>
+  when searching for: <%= params[:keywords] %>
+</h3>
+
+<div>
+ <%= render @products %>
+</div>
+
+<%= will_paginate @products %>
+
+<%# TODO: Style %>

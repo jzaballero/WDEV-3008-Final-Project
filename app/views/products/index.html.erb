@@ -1,9 +1,11 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
-<ul>
+<div>
  <%= render @products %>
-</ul>
+</div>
 
-<%= will_paginate @products %>
+<div class="m-6">
+  <%= will_paginate @products %>
+<div>
 
 <%# TODO: Style %>

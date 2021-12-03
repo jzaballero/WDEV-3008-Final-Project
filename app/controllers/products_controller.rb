@@ -1,10 +1,14 @@
+require 'date'
+
 class ProductsController < ApplicationController
   def index
-    @products = Product.includes(:categories).paginate(page: params[:page], per_page: 10)
+    @products = Product.includes(:categories).all.paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @product = Product.find(params[:id])
+    @categories = Category.joins(:products)
+                          .where(products: { id: params[:id] })
   end
 
   def search
@@ -12,5 +16,8 @@ class ProductsController < ApplicationController
     @products = Product.where('name LIKE ?', keyword)
                        .or(Product.where('description LIKE ?', keyword))
                        .paginate(page: params[:page], per_page: 10)
+
+    three_days = Date.today - 3
+    @recently_posted = Product.where('created_at >', three_days)
   end
 end

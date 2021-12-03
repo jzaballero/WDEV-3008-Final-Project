@@ -1,11 +1,33 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
+<div class="subtitle has-text-right">
+  <div class="dropdown is-hoverable" >
+    <div class="dropdown-trigger">
+      <button class="button is-light mb-3" aria-haspopup="true" aria-controls="dropdown-menu4">
+        <span>Filter</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </div>
+    <div class="dropdown-menu has-text-left" id="dropdown-menu4" role="menu">
+      <div class="dropdown-content">
+        <a class="dropdown-item">Top Products</a>
+        <a class="dropdown-item">Recently Posted</a>
+        <a class="dropdown-item">Recently Updated</a>
+      </div>
+    </div>
+  </div>
 <div>
- <%= render @products %>
-</div>
 
-<div class="m-6">
-  <%= will_paginate @products %>
-<div>
+<div class="has-text-left">
+  <div>
+  <%= render @products %>
+  </div>
+
+  <div class="m-6">
+    <%= will_paginate @products %>
+  <div>
+</div>
 
 <%# TODO: Style %>

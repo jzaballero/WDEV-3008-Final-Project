@@ -1,4 +1,5 @@
-<h2 class="title"><%= link_to "Categories", categories_path%></h2>
+<h2 class="title"><%= link_to "Category - #{@category.name}", categories_path%></h2>
+<p class="subtitle"><%= @category.price_range %></p>
 
 <ul>
  <%= render @products %>

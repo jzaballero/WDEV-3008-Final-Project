@@ -1,7 +1,11 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
-<h3 class="subtitle"><%= link_to @product.name, @product %></h3>
-<%# TODO: link_to @product.category.name, @product %>
+<h3 class="subtitle">
+  <%= link_to @product.name, @product %>
+  <% @categories.each do | category |%>
+    - <%= link_to category.name, category %>
+  <% end %>
+
 <h5 class="subtitle is-5">$<%= '%.2f' % @product.price %><h5>
 <h5 class="subtitle is-5 mb-2">Description<h5>
 <p><%= simple_format(@product.description) %></p>

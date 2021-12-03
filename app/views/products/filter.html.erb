@@ -1,6 +1,6 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
-<div class="subtitle has-text-right">
+<div class="has-text-right">
   <div class="dropdown is-hoverable" >
     <div class="dropdown-trigger">
       <button class="button is-light mb-3" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -20,14 +20,22 @@
   </div>
 <div>
 
-<div class="has-text-left">
-  <div>
-  <%= render @products %>
+<% if params[:filter] == "recently_posted" %>
+  <h3 class="subtitle is-5 mt-5 mb-2 has-text-left ">Recently Posted</h3>
+
+  <div class="has-text-left">
+  <%= render filter_products_path(:filter => "recently_posted"), collection: @recently_posted %>
   </div>
 
-  <div class="m-6">
-    <%= will_paginate @products %>
-  <div>
-</div>
+  <%= will_paginate @recently_posted %>
+<% end %>
 
-<%# TODO: Style %>
+<% if params[:filter] == "recently_updated" %>
+  <h3 class="subtitle is-5 mt-5 mb-2 has-text-left ">Recently Updated</h3>
+
+  <div class="has-text-left">
+    <%= render @filter, collection: @recently_updated %>
+  </div>
+
+  <%= will_paginate @recently_updated %>
+<% end %>

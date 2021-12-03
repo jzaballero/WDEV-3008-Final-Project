@@ -16,8 +16,12 @@ class ProductsController < ApplicationController
     @products = Product.where('name LIKE ?', keyword)
                        .or(Product.where('description LIKE ?', keyword))
                        .paginate(page: params[:page], per_page: 10)
+  end
 
-    three_days = Date.today - 3
-    @recently_posted = Product.where('created_at >', three_days)
+  def filter
+    @today = Date.today
+    @three_days = Date.today - 3
+    @recently_posted = Product.where('created_at between ? and ?', @today, @three_days)
+                              .paginate(page: params[:page], per_page: 10)
   end
 end

@@ -30471,3 +30471,582 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 73ms (Views: 67.0ms | ActiveRecord: 4.7ms | Allocations: 24242)
 
 
+Started GET "/products" for 127.0.0.1 at 2021-12-03 19:52:03 -0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:25
+  [1m[36mProductCategory Load (0.3ms)[0m  [1m[34mSELECT "product_categories".* FROM "product_categories" WHERE "product_categories"."product_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["product_id", 1], ["product_id", 2], ["product_id", 3], ["product_id", 4], ["product_id", 5], ["product_id", 6], ["product_id", 7], ["product_id", 8], ["product_id", 9], ["product_id", 10]]
+  ↳ app/views/products/index.html.erb:25
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  ↳ app/views/products/index.html.erb:25
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 28.9ms | Allocations: 11622)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:29
+  Rendered products/index.html.erb within layouts/application (Duration: 41.3ms | Allocations: 18093)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 5.8ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 57.9ms | Allocations: 24462)
+Completed 200 OK in 62ms (Views: 55.4ms | ActiveRecord: 4.8ms | Allocations: 25911)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:52:05 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 27.1ms | Allocations: 1953)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 10.9ms | Allocations: 2268)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 7434)
+Completed 200 OK in 51ms (Views: 48.3ms | ActiveRecord: 0.9ms | Allocations: 8108)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:53:25 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.6ms | Allocations: 1956)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.9ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.9ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 8.8ms | Allocations: 2828)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 8331)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.8ms | Allocations: 9873)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:53:46 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.0ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.7ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 6.4ms | Allocations: 2827)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 8338)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.8ms | Allocations: 9873)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:53:46 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1497)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 5.2ms | Allocations: 2263)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 6987)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.8ms | Allocations: 7532)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:54:04 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 25.8ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 6.4ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 8363)
+Completed 200 OK in 47ms (Views: 44.9ms | ActiveRecord: 0.8ms | Allocations: 9899)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:54:19 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.1ms | Allocations: 1951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.7ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 8.5ms | Allocations: 2827)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 8315)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.1ms | Allocations: 9857)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:54:19 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1497)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 6.3ms | Allocations: 2263)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 6973)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.8ms | Allocations: 7517)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 19:54:29 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 21.6ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.7ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (1.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 8.9ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 8312)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 1.6ms | Allocations: 9846)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:03:54 -0600
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 15.2ms | Allocations: 2744)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 4.0ms | Allocations: 173)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 40.8ms | Allocations: 8317)
+  Rendered layout layouts/application.html.erb (Duration: 203.2ms | Allocations: 17119)
+Completed 200 OK in 289ms (Views: 229.8ms | ActiveRecord: 3.5ms | Allocations: 20919)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:04:46 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.5ms | Allocations: 1959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.0ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 8323)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.8ms | Allocations: 9870)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:04:51 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.6ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 6.5ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 8323)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.8ms | Allocations: 9870)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:03 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 25.0ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 162)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.3ms | Allocations: 2849)
+  Rendered layout layouts/application.html.erb (Duration: 56.7ms | Allocations: 8338)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 1.0ms | Allocations: 9873)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:26 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.2ms | Allocations: 1960)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 62)
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.0ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 8336)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.9ms | Allocations: 9890)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:27 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1497)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 5.2ms | Allocations: 2263)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 6975)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.9ms | Allocations: 7519)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:27 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1495)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 4.5ms | Allocations: 2274)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 6981)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.7ms | Allocations: 7525)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:36 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 23.7ms | Allocations: 1951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.5ms | Allocations: 162)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.3ms | Allocations: 2847)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 8345)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.8ms | Allocations: 9879)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:05:36 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1497)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.0ms | Allocations: 2263)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 6973)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 1.3ms | Allocations: 7517)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:06:06 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 25.2ms | Allocations: 1959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.6ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 10.0ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 8323)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.9ms | Allocations: 9878)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:06:16 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 26.5ms | Allocations: 1950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.8ms | Allocations: 159)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 1.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.3ms | Allocations: 62)
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 10.7ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 8312)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.9ms | Allocations: 9846)
+
+
+Started GET "/products/filter?filter=recently_updated" for 127.0.0.1 at 2021-12-03 20:06:19 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_updated"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (updated_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:50
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (updated_at between '2021-11-30' and '2021-12-03') LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/products/filter.html.erb:51
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 100], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:2
+  Rendered collection of products/_product.html.erb [1 times] (Duration: 116.8ms | Allocations: 7431)
+  Rendered products/filter.html.erb within layouts/application (Duration: 127.4ms | Allocations: 12974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 5.2ms | Allocations: 2268)
+  Rendered layout layouts/application.html.erb (Duration: 140.5ms | Allocations: 18356)
+Completed 200 OK in 142ms (Views: 138.2ms | ActiveRecord: 2.7ms | Allocations: 18903)
+
+
+Started GET "/products/filter?filter=recently_posted" for 127.0.0.1 at 2021-12-03 20:06:21 -0600
+Processing by ProductsController#filter as HTML
+  Parameters: {"filter"=>"recently_posted"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/filter.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (created_at between '2021-11-30' and '2021-12-03')[0m
+  ↳ app/views/products/filter.html.erb:45
+  Rendered products/filter.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/common/_menu.html.erb:26
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered common/_menu_category.html.erb (Duration: 0.1ms | Allocations: 62)
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+  ↳ app/views/common/_menu.html.erb:42
+  Rendered common/_menu.html.erb (Duration: 7.5ms | Allocations: 2262)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 6970)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 1.9ms | Allocations: 7517)
+
+

@@ -1,14 +1,14 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
-<% if params[:filter] == "recently_posted" %>
-    <h3 class="subtitle is-5 mt-5">Recently Posted</h3>
-  <% elsif params[:filter] == "recently_updated" %>
-    <h3 class="subtitle is-5 mt-5">Recently Updated</h3>
-  <% end %>
-
 <div>
-  <div class="has-text-right">
-    <div class=" dropdown is-hoverable" >
+  <div class="field is-grouped is-flex is-justify-content-space-between">
+    <% if params[:filter] == "recently_posted" %>
+      <h3 class="subtitle is-5 control mt-2">Recently Posted</h3>
+    <% elsif params[:filter] == "recently_updated" %>
+      <h3 class="subtitle is-5 control mt-2">Recently Updated</h3>
+    <% end %>
+
+    <div class="dropdown is-hoverable control" >
       <div class="dropdown-trigger">
         <button class="button is-light mb-3" aria-haspopup="true" aria-controls="dropdown-menu4">
           <span>Filter</span>

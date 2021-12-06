@@ -13,6 +13,7 @@
 
   <body class="columns pt-6">
     <%= render partial: 'common/menu' %>
+    <%= render_breadcrumbs :separator => ' >> ' %>
     <div class="column is-two-thirds">
       <%= yield %>
     </div>

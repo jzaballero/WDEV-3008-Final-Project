@@ -1,6 +1,8 @@
 require 'date'
 
 class ProductsController < ApplicationController
+  add_breadcrumb 'Home', :root_path
+
   def index
     @products = Product.includes(:categories).all.paginate(page: params[:page], per_page: 10)
   end
@@ -9,6 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @categories = Category.joins(:products)
                           .where(products: { id: params[:id] })
+
+    add_breadcrumb @categories.first.name, category_path(id: @categories.first.id)
+    add_breadcrumb 'Product', product_path(id: params[:id])
   end
 
   def search
@@ -26,14 +31,6 @@ class ProductsController < ApplicationController
                                  products.description LIKE ?)', search_category, keyword, keyword)
                          .paginate(page: params[:page], per_page: 10)
                 end
-
-    # @products = Product.joins(:categories)
-    #                    .where('categories.id = ?', search_category)
-    #                    .paginate(page: params[:page], per_page: 10)
-
-    # @products = Product.where('name LIKE ?', keyword)
-    #                    .or(Product.where('description LIKE ?', keyword))
-    #                    .paginate(page: params[:page], per_page: 10)
   end
 
   def filter

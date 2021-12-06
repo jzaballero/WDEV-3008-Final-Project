@@ -13,10 +13,27 @@ class ProductsController < ApplicationController
 
   def search
     keyword = "%#{params[:keywords]}%"
+    search_category = params[:search_category].to_s
 
-    @products = Product.where('name LIKE ?', keyword)
-                       .or(Product.where('description LIKE ?', keyword))
-                       .paginate(page: params[:page], per_page: 10)
+    @products = if search_category == ''
+                  Product.where('name LIKE ?', keyword)
+                         .or(Product.where('description LIKE ?', keyword))
+                         .paginate(page: params[:page], per_page: 10)
+                else
+                  Product.joins(:categories)
+                         .where('categories.id = ? and
+                                 (products.name LIKE ? or
+                                 products.description LIKE ?)', search_category, keyword, keyword)
+                         .paginate(page: params[:page], per_page: 10)
+                end
+
+    # @products = Product.joins(:categories)
+    #                    .where('categories.id = ?', search_category)
+    #                    .paginate(page: params[:page], per_page: 10)
+
+    # @products = Product.where('name LIKE ?', keyword)
+    #                    .or(Product.where('description LIKE ?', keyword))
+    #                    .paginate(page: params[:page], per_page: 10)
   end
 
   def filter

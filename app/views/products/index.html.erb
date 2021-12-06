@@ -12,9 +12,9 @@
     </div>
     <div class="dropdown-menu has-text-left" id="dropdown-menu4" role="menu">
       <div class="dropdown-content">
-        <a class="dropdown-item">Top Products</a>
-        <a class="dropdown-item">Recently Posted</a>
-        <a class="dropdown-item">Recently Updated</a>
+        <p class="dropdown-item"><%= link_to "Top Products", products_path%></p>
+        <p class="dropdown-item"><%= link_to "Recently Posted", filter_products_path(:filter => "recently_posted") %></p>
+        <p class="dropdown-item"><%= link_to "Recently Updated", filter_products_path(:filter => "recently_updated") %></p>
       </div>
     </div>
   </div>

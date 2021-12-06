@@ -1,0 +1,64 @@
+<h2 class="title"><%= link_to "Products", products_path%></h2>
+
+<div>
+  <div class="field is-grouped is-flex is-justify-content-space-between">
+    <% if params[:filter] == "recently_posted" %>
+      <h3 class="subtitle is-5 control mt-2">Recently Posted</h3>
+    <% elsif params[:filter] == "recently_updated" %>
+      <h3 class="subtitle is-5 control mt-2">Recently Updated</h3>
+    <% end %>
+
+    <div class="dropdown is-hoverable control" >
+      <div class="dropdown-trigger">
+        <button class="button is-light mb-3" aria-haspopup="true" aria-controls="dropdown-menu4">
+          <span>Filter</span>
+          <span class="icon is-small"> <i class="fas fa-angle-down" aria-hidden="true"></i> </span>
+        </button>
+      </div>
+      <div class="dropdown-menu has-text-left" id="dropdown-menu4" role="menu">
+        <div class="dropdown-content">
+          <p class="dropdown-item"><%= link_to "Top Products", products_path%></p>
+          <p class="dropdown-item"><%= link_to "Recently Posted", filter_products_path(:filter => "recently_posted") %></p>
+          <p class="dropdown-item"><%= link_to "Recently Updated", filter_products_path(:filter => "recently_updated") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
+
+<div>
+  <% if params[:filter] == "recently_posted" %>
+    <div>
+      <% if @recently_posted.count > 0 %>
+        <%= render @recently_posted %>
+      <% else %>
+        <div class="card mb-3">
+          <div class="card-content">
+            <figure class="media-content">
+              <p class="subtitle is-6 has-text-grey-light">No Recently Posted Products (In the past 3 days)</p>
+            </figure>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%= will_paginate @recently_posted %>
+  <% end %>
+
+  <% if params[:filter] == "recently_updated" %>
+    <div>
+      <% if @recently_updated.count > 0 %>
+        <%= render @recently_updated %>
+      <% else %>
+        <div class="card mb-3">
+          <div class="card-content">
+            <figure class="media-content">
+              <p class="subtitle is-6 has-text-grey-light">No Recently Updated Products (In the past 3 days)</p>
+            </figure>
+          </div>
+        </div>
+      <% end %>
+
+    <%= will_paginate @recently_updated %>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
-<div class="card mb-3">
+<div class="card mb-3 is-flex">
   <% if product.image.present? %>
-    <div class="card-image">
+    <div class="card-image m-3">
       <figure class="image">
         <%= image_tag product.image%>
       </figure>
@@ -8,11 +8,18 @@
   <% end %>
   <div class="card-content">
     <figure class="media-content">
-      <p class="title is-4"><%= link_to product.name, product %></p>
-      <p class="title is-6">$<%= '%.2f' % product.price %></p>
-      <p class="subtitle is-6 has-text-grey-light has-text-right">
-        Posted <%= (DateTime.now - DateTime.parse(product.created_at.strftime("%Y-%m-%d"))).to_i %> days ago
-      </p>
+      <div>
+        <p class="title is-4"><%= link_to product.name, product %></p>
+        <p class="title is-6">$<%= '%.2f' % product.price %></p>
+      </div>
+      <div>
+        <p class="subtitle is-6 has-text-grey-light has-text-right">
+          <%= product.categories.first.name  %>
+        </p>
+        <p class="subtitle is-6 has-text-grey-light has-text-right">
+          Posted <%= (DateTime.now - DateTime.parse(product.created_at.strftime("%Y-%m-%d"))).to_i %> days ago
+        </p>
+      <div>
     </figure>
   </div>
 </div>

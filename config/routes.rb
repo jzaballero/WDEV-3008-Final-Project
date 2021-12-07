@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :cart
   resources :categories
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

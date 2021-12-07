@@ -28,9 +28,9 @@
 
 <div>
   <% if params[:filter] == "recently_posted" %>
+        <%= render @recently_posted %>
     <div>
       <% if @recently_posted.count > 0 %>
-        <%= render @recently_posted %>
       <% else %>
         <div class="card mb-3">
           <div class="card-content">

@@ -1,11 +1,5 @@
 <div class="card mb-3 is-flex">
-  <% if product.image.present? %>
-    <div class="card-image m-3">
-      <figure class="image">
-        <%= image_tag product.image%>
-      </figure>
-    </div>
-  <% end %>
+
   <div class="card-content">
     <figure class="media-content">
       <div>
@@ -21,5 +15,25 @@
         </p>
       <div>
     </figure>
+
+
+    <% if cart.include?(product) %>
+      <%= button_to cart_path(product), method: :delete do %>
+        Remove From Cart
+      <% end %>
+    <% else %>
+      <%= form_with  url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, product.id) %>
+        <%= button_tag 'Add to Cart', class: "button is-primary" %>
+      <% end %>
+    <% end %>
   </div>
+
+  <% if product.image.present? %>
+    <div class="card-image m-3">
+      <figure class="image">
+        <%= image_tag product.image%>
+      </figure>
+    </div>
+  <% end %>
 </div>

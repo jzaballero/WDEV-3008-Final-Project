@@ -14,10 +14,30 @@
   <body>
     <div class="columns pt-6">
       <%= render partial: 'common/menu' %>
-      <div class="column is-two-thirds">
-        <div class="container mb-4">
-          <%= render_breadcrumbs :separator => ' >> ' %>
+      <div class="column is-two-thirds ml-6">
+        <div class="container level mb-4">
+          <div>
+            <%= render_breadcrumbs :separator => ' >> ' %>
+          </div>
+          <div class="has-text-right">
+            <%= link_to image_tag("shopping-cart.png", width: 50), cart_index_path %>
+            <ul>
+              <li>
+                <% if cart.present? %>
+                  <sup><%= cart.size %></sup>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <nav>
+        </nav>
+
+        <% if flash[:notice] %>
+          <p><%= flash[:notice] %></p>
+        <% end %>
+
         <%= yield %>
       </div>
     </div>

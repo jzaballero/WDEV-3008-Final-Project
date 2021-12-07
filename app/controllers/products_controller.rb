@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   add_breadcrumb 'Home', :root_path
 
   def index
-    @products = Product.includes(:categories).all.paginate(page: params[:page], per_page: 10)
+    @products = Product.includes(:categories).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -21,8 +21,9 @@ class ProductsController < ApplicationController
     search_category = params[:search_category].to_s
 
     @products = if search_category == ''
-                  Product.where('name LIKE ?', keyword)
-                         .or(Product.where('description LIKE ?', keyword))
+                  Product.joins(:categories)
+                         .where('products.name LIKE ?', keyword)
+                         .or(Product.where('products.description LIKE ?', keyword))
                          .paginate(page: params[:page], per_page: 10)
                 else
                   Product.joins(:categories)
@@ -34,13 +35,15 @@ class ProductsController < ApplicationController
   end
 
   def filter
-    today = Date.today
-    three_days = Date.today - 3
+    today = Date.today + 1
+    three_days = today - 3
 
-    @recently_posted = Product.where('created_at between ? and ?', three_days, today)
+    @recently_posted = Product.joins(:categories)
+                              .where('products.created_at between ? and ?', three_days, today)
                               .paginate(page: params[:page], per_page: 10)
 
-    @recently_updated = Product.where('updated_at between ? and ?', three_days, today)
+    @recently_updated = Product.joins(:categories)
+                               .where('products.updated_at between ? and ?', three_days, today)
                                .paginate(page: params[:page], per_page: 10)
   end
 end

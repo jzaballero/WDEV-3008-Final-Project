@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to retrieve data from the pages table
 class PagesController < ApplicationController
   def index
     @pages = Page.all

@@ -1,5 +1,6 @@
-ActiveAdmin.register Product do
+# frozen_string_literal: true
 
+ActiveAdmin.register Product do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -11,7 +12,7 @@ ActiveAdmin.register Product do
     f.semantic_errors
     f.inputs
     f.inputs do
-      f.input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image) : ""
+      f.input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image) : ''
     end
     f.actions
   end
@@ -23,5 +24,4 @@ ActiveAdmin.register Product do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-
 end

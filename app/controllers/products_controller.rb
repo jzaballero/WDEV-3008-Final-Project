@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'date'
 
+# Controller to query the Products table
 class ProductsController < ApplicationController
   add_breadcrumb 'Home', :root_path
 
@@ -9,29 +12,43 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @categories = Category.joins(:products)
-                          .where(products: { id: params[:id] })
+    @categories = Category.joins(:products).where(products: { id: params[:id] })
+    show_breadcrumbs
+  end
 
+  def show_breadcrumbs
     add_breadcrumb @categories.first.name, category_path(id: @categories.first.id)
     add_breadcrumb 'Product', product_path(id: params[:id])
   end
 
   def search
-    keyword = "%#{params[:keywords]}%"
     search_category = params[:search_category].to_s
 
     @products = if search_category == ''
-                  Product.joins(:categories)
-                         .where('products.name LIKE ?', keyword)
-                         .or(Product.where('products.description LIKE ?', keyword))
-                         .paginate(page: params[:page], per_page: 10)
+                  search_key
                 else
-                  Product.joins(:categories)
-                         .where('categories.id = ? and
-                                 (products.name LIKE ? or
-                                 products.description LIKE ?)', search_category, keyword, keyword)
-                         .paginate(page: params[:page], per_page: 10)
+                  search_category_key
                 end
+  end
+
+  def search_key
+    keyword = "%#{params[:keywords]}%"
+
+    Product.joins(:categories)
+           .where('products.name LIKE ?', keyword)
+           .or(Product.where('products.description LIKE ?', keyword))
+           .paginate(page: params[:page], per_page: 10)
+  end
+
+  def search_category_key
+    keyword = "%#{params[:keywords]}%"
+    search_category = params[:search_category].to_s
+
+    Product.joins(:categories)
+           .where('categories.id = ? and
+                                  (products.name LIKE ? or
+                                  products.description LIKE ?)', search_category, keyword, keyword)
+           .paginate(page: params[:page], per_page: 10)
   end
 
   def filter

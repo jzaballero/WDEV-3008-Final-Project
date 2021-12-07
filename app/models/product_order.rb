@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProductOrder < ApplicationRecord
   belongs_to :product, dependent: :destroy
   belongs_to :order, dependent: :destroy

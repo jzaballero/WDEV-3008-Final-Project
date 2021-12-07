@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to retrieve data from the categories table
 class CategoriesController < ApplicationController
   add_breadcrumb 'Home', :root_path
 

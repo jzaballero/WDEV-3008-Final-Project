@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to manage the cart session and create flash notices
 class CartController < ApplicationController
   def create
     id = params[:id].to_i

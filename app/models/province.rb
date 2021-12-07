@@ -4,5 +4,5 @@ class Province < ApplicationRecord
   has_many :users
 
   validates :name, presence: true
-  validates :PST, :GST, :HST, numericality: true
+  validates :PST, :GST, :HST, numericality: true, allow_nil: true
 end

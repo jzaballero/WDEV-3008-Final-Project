@@ -7,10 +7,11 @@ require 'faker'
 
 # Products
 n = 99
-e = [ "Promo", "Holo", "Reverse Holo", "Full Body", "GX Half Body", "EX Half Body", "V Half Art", "Secret Rare", "Rainbow Rare", "Shiny", "VMAX"]
-c = [ "Used", "Mint Condition", "New", "Collectible"]
+e = ['Promo', 'Holo', 'Reverse Holo', 'Full Body', 'GX Half Body', 'EX Half Body', 'V Half Art', 'Secret Rare',
+     'Rainbow Rare', 'Shiny', 'VMAX']
+c = ['Used', 'Mint Condition', 'New', 'Collectible']
 
-for i in 0..n
+(0..n).each do |i|
   random_n = rand(n)
   random_e = rand(e.length)
   random_c = rand(c.length)
@@ -21,9 +22,9 @@ for i in 0..n
   uri = URI(url)
   response = Net::HTTP.get(uri)
   json = JSON.parse(response)
-  results = json["results"]
+  results = json['results']
 
-  pokemon_name = results[random_n]["name"]
+  pokemon_name = results[random_n]['name']
 
   puts "Working on product #{i} of #{n} [#{pokemon_name}]..."
 
@@ -32,7 +33,7 @@ for i in 0..n
   n_response = Net::HTTP.get(n_uri)
   n_json = JSON.parse(n_response)
 
-  type = n_json["types"][0]["type"]["name"]
+  type = n_json['types'][0]['type']['name']
 
   name = "#{year} #{e[random_e]} #{pokemon_name.capitalize}"
   description = "#{c[random_c]}: #{Faker::Commerce.material} #{name}\nMoves: #{Faker::Games::Pokemon.move}, #{Faker::Games::Pokemon.move}\nPromotional Code: #{Faker::Commerce.promotion_code}"
@@ -55,7 +56,7 @@ for i in 0..n
     category = 4
   else
     # Ultra Rare ($500-$200000)
-    price = Faker::Commerce.price(range: 500..200000)
+    price = Faker::Commerce.price(range: 500..200_000)
     category = 5
   end
 
@@ -74,20 +75,18 @@ for i in 0..n
   new_product_category.save
 
   unless new_product.valid?
-    new_product.errors.messages.each do | column, errors |
-      errors.each do | error |
+    new_product.errors.messages.each do |column, errors|
+      errors.each do |error|
         puts "ERROR: #{column} #{error}"
       end
     end
   end
 
-  unless new_product_category.valid?
-    new_product_category.errors.messages.each do | column, errors |
-      errors.each do | error |
-        puts "ERROR: #{column} #{error}"
-      end
+  next if new_product_category.valid?
+
+  new_product_category.errors.messages.each do |column, errors|
+    errors.each do |error|
+      puts "ERROR: #{column} #{error}"
     end
   end
 end
-
-

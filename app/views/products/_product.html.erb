@@ -18,8 +18,9 @@
 
 
     <% if cart.include?(product) %>
-      <%= button_to cart_path(product), method: :delete do %>
-        Remove From Cart
+      <%= form_with  url: cart_path(product), method: :delete do %>
+        <%= hidden_field_tag(:id, product.id) %>
+        <%= button_tag 'Remove From Cart', class: "button is-primary" %>
       <% end %>
     <% else %>
       <%= form_with  url: cart_index_path, method: :post do %>

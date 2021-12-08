@@ -1,7 +1,7 @@
 <h2 class="title"><%= link_to "Products", products_path%></h2>
 
 <div class="subtitle has-text-right">
-  <div class="dropdown is-hoverable" >
+  <div class="dropdown is-hoverable mr-6" >
     <div class="dropdown-trigger">
       <button class="button is-light mb-3" aria-haspopup="true" aria-controls="dropdown-menu4">
         <span>Filter</span>
@@ -20,12 +20,12 @@
   </div>
 <div>
 
-<div class="has-text-left">
+<div class="has-text-left mr-4">
   <div>
   <%= render @products %>
   </div>
 
-  <div class="m-6">
+  <div class="m-4">
     <%= will_paginate @products %>
   <div>
 </div>

@@ -21,4 +21,8 @@ class CartController < ApplicationController
 
     redirect_to root_path
   end
+
+  def invoice
+    @products = Product.find(session[:shopping_cart])
+  end
 end

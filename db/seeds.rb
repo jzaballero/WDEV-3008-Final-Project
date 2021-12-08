@@ -5,16 +5,16 @@
 # require 'faker'
 # require 'csv'
 
-table = CSV.read('db/ProvincialSalesTax.csv')
+# table = CSV.read('db/ProvincialSalesTax.csv')
 
-(1..table.length - 1).each do |x|
-  province = Province.new(name: table[x][0],
-                          PST: table[x][3],
-                          GST: table[x][1],
-                          HST: table[x][2])
+# (1..table.length - 1).each do |x|
+#   province = Province.new(name: table[x][0],
+#                           PST: table[x][3],
+#                           GST: table[x][1],
+#                           HST: table[x][2])
 
-  province.save
-end
+#   province.save
+# end
 
 # # Status - Completed
 # # Categories - Completed

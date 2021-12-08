@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart
+  resources :cart do
+    collection do
+      get 'invoice'
+    end
+  end
+
   resources :categories
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

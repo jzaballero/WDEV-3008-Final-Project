@@ -23,6 +23,7 @@ class CartController < ApplicationController
   end
 
   def invoice
-    @products = Product.find(session[:shopping_cart])
+    @invoice_items = Product.find(session[:shopping_cart])
+    @provinces = Province.all
   end
 end

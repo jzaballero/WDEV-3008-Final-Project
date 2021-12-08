@@ -3,7 +3,7 @@
 <div class="has-text-left">
   <% if cart.count > 0 %>
     <%= render cart %>
-    <%= button_to "Checkout", invoice_cart_index_path, method: :post, action: "invoice", class: "button is-primary" %>
+    <%= button_to "Checkout", invoice_cart_index_path, method: :get, action: "invoice", class: "button is-primary" %>
   <% else %>
     <div class="card mb-3">
       <div class="card-content">

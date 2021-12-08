@@ -3,23 +3,31 @@
 <div class="card mb-3 is-flex">
 
   <div class="card-content">
-    <figure class="media-content">
-      <div>
-        <p class="title is-4"><%= link_to product.name, product %></p>
-        <p class="title is-6">$<%= '%.2f' % product.price %></p>
-      </div>
-      <div>
-        <p class="subtitle is-6 has-text-grey-light has-text-right">
-          <%= product.categories.first.name  %>
-        </p>
-        <p class="subtitle is-6 has-text-grey-light has-text-right">
-          Posted <%= (DateTime.now - DateTime.parse(product.created_at.strftime("%Y-%m-%d"))).to_i %> days ago
-        </p>
-      <div>
-    </figure>
+    <div class="content">
+      <h3 class="subtitle has-text-grey-dark">Checkout</h3>
 
-  <%= form_with  url: cart_index_path, method: :post do %>
-    <%= hidden_field_tag(:id, product.id) %>
-    <%= button_tag 'Checkout', class: "button is-primary" %>
-  <% end %>
+      <h3 class="subtitle is-6 has-text-grey">Items</h3>
+      <ul>
+        <%= render partial: 'item', collection: @invoice_items %>
+      </ul>
+
+      <h3 class="subtitle is-6 has-text-grey">Province</h3>
+      <div class="control mt-2">
+        <div class="select is-fullwidth">
+          <select name="province" id="province">
+            <option disabled>Choose Province...</option>
+            <% @provinces.each do | province | %>
+              <option value="<%=province.id%>"><%= province.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subtitle has-text-grey">Invoice</h3>
+    <ul>
+      <% @invoice_items.each do | item | %>
+        <li><%= item.price %> x Qty</li>
+      <% end %>
+    </ul>
 </div>

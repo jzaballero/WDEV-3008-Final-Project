@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/:permalink' => 'pages#permalink', as: 'permalink'
   root to: 'products#index'
 
